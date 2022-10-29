@@ -1,0 +1,247 @@
+:root {
+  --topbar-color: #424242;
+  --orange-bg: #f1ae44;
+  --grey-white: #bfbfbf;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body, header {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.topmost {
+  width: 100%;
+  background-color: var(--topbar-color);
+  color: white;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-around;
+}
+
+.top-left span {
+  margin-right: 1rem;
+}
+
+.top-right span {
+  margin-right: 1rem;
+  color: var(--grey-white);
+}
+
+.rounded {
+  background-color: var(--orange-bg);
+  border-radius: 50%;
+  padding: 0.4rem 0.5rem;
+  color:black !important;
+}
+
+.mycolor {
+  background-color: var(--orange-bg);
+  border-radius: 50%;
+  padding: 0.2rem 0.2rem;
+  color: white !important;
+}
+
+nav {
+  width: 100%;
+  background-color: transparent;
+  position: fixed;
+  left: 0%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 5%;
+  padding-right: 5%;
+  z-index: 5;
+}
+
+nav ul {
+  float: right;
+  list-style: none;
+  display: inline-flex;
+}
+
+nav ul li {
+  margin-right: 2rem;
+  transition: border-bottom-width 0.3s, padding-bottom 0.3s;
+  border: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  text-transform: capitalize;
+}
+
+nav ul li:hover {
+  border-bottom: 1px solid white;
+  padding-bottom: 0.5rem;
+}
+
+nav ul li:first-child::after {
+  content: '';
+  width: 5px;
+  height: 5px;
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  transform: rotate(45deg);
+  position: absolute;
+  top: 3rem;
+  margin-left: 0.5rem;
+}
+
+.dropdown {
+  opacity: 0;
+  display: block;
+  top: 6rem;
+  background-color: white;
+  position: absolute;
+  transition: opacity 400ms;
+  color: black;
+  box-shadow: 0 2px 2px 1px #bfbfbf;
+  border-radius: 3px;
+}
+
+.dropdown li {
+  margin: 0 2rem 1rem 2rem;
+}
+
+nav ul li:first-child:hover a ul.dropdown {
+  opacity: 1;
+}
+
+.carousel {
+  height:100vh;
+  display: flex;
+  max-width: 300vh;
+}
+
+#bg-img1 {
+  background-image: url(Oximages/image-5.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+  animation: slide1 5s steps() 2s infinite direction backwards;
+}
+
+@keyframes slide1 {
+  to {
+    opacity: 0;
+  }
+}
+
+#bg-img2 {
+  background-image: url(Oximages/img-16.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+  opacity: 0;
+  display: none;
+}
+
+#bg-img3 {
+  background-image: url(Oximages/image-video.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100vw;
+  height: 100%;
+  opacity: 0;
+  display: none;
+  animation: slide1 5s steps() 2s infinite direction backwards;
+}
+
+@keyframes slide1 {
+  to {
+    opacity: 0;
+  }
+}
+
+#bg-img1 h2, #bg-img1 p, #bg-img1 button, #bg-img2 h2, #bg-img2 p, #bg-img2 button, #bg-img3 h2, #bg-img3 p, #bg-img3 button {
+  position: absolute;
+  left: 40%;
+  color: white;
+  z-index: 3;
+} 
+
+#bg-img4 {
+  background-image: url(Oximages/image-17.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  animation: slide1 5s steps() 2s infinite direction backwards;
+}
+
+@keyframes slide1 {
+  to {
+    opacity: 0;
+  }
+}
+
+#bg-img5 {
+  background-image: url(Oximages/img-19.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0;
+  display: none;
+}
+
+#bg-img6 {
+  background-image: url(Oximages/image-18.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  opacity: 0;
+  display: none;
+  animation: slide1 5s steps() 2s infinite direction backwards;
+}
+
+@keyframes slide1 {
+  to {
+    opacity: 0;
+  }
+}
+
+#bg-img1 h2 {
+  top: 30%;
+  text-transform: uppercase;
+} 
+
+#bg-img1 p {
+  top: 35%;
+  font-size: 50px;
+} 
+
+#bg-img1 button {
+  top: 80%;
+  background-color: var(--orange-bg);
+  border: none;
+  padding: 0.5rem 1.5rem;
+  clip-path: polygon(0% 0%, 100% 0%, 90% 100%, 0% 100%);
+  text-transform: uppercase;
+  cursor: pointer;
+} 
+
+.overlay {
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+}
+
